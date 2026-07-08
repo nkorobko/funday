@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FunDay 🎉 — מתכנן ימי כיף</title>
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --ink: #1f2437;
+    --muted: #6b7280;
+    --brand: #5b5bd6;
+    --brand-soft: #eef0ff;
+    --ok: #16a34a;
+    --ok-soft: #eafcf1;
+    --warn: #d97706;
+    --warn-soft: #fef4e6;
+    --radius: 14px;
+    --shadow: 0 1px 3px rgba(30, 35, 60, .08), 0 8px 24px rgba(30, 35, 60, .06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Heebo", "Arial Hebrew", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    padding-bottom: 60px;
+  }
+  header {
+    background: linear-gradient(135deg, #5b5bd6 0%, #8b5bd6 60%, #d65bb8 100%);
+    color: #fff;
+    padding: 34px 20px 46px;
+    text-align: center;
+  }
+  header h1 { font-size: 2.1rem; letter-spacing: .5px; }
+  header p { opacity: .92; margin-top: 6px; font-size: 1.05rem; }
+  main { max-width: 900px; margin: -28px auto 0; padding: 0 16px; }
+
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+  }
+  form.search-card { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 14px; align-items: end; }
+  @media (max-width: 760px) { form.search-card { grid-template-columns: 1fr 1fr; } form.search-card button { grid-column: 1 / -1; } }
+  label { display: block; font-size: .85rem; font-weight: 600; color: var(--muted); margin-bottom: 5px; }
+  select, input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #e3e5ee;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #fbfbfe;
+    color: var(--ink);
+  }
+  select:focus, input:focus { outline: none; border-color: var(--brand); background: #fff; }
+  button.primary {
+    background: var(--brand);
+    color: #fff;
+    border: none;
+    padding: 11px 26px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter .15s;
+    white-space: nowrap;
+  }
+  button.primary:hover { filter: brightness(1.08); }
+
+  .section-title { display: flex; justify-content: space-between; align-items: baseline; margin: 30px 4px 12px; }
+  .section-title h2 { font-size: 1.25rem; }
+  .section-title .count { color: var(--muted); font-size: .9rem; }
+
+  .results { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 700px) { .results { grid-template-columns: 1fr; } }
+
+  .activity { position: relative; display: flex; flex-direction: column; gap: 8px; }
+  .activity .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+  .activity h3 { font-size: 1.08rem; }
+  .activity .city { color: var(--muted); font-size: .88rem; }
+  .badge {
+    font-size: .78rem; font-weight: 700;
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .badge.ok   { background: var(--ok-soft);   color: var(--ok); }
+  .badge.over { background: var(--warn-soft); color: var(--warn); }
+  .activity .desc { color: #3f4457; font-size: .93rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+  .chip {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: .8rem; font-weight: 600;
+    padding: 3px 10px; border-radius: 999px;
+  }
+  .total { font-weight: 800; font-size: 1.02rem; margin-top: 2px; }
+  .actions { display: flex; gap: 10px; margin-top: 8px; }
+  .actions a, .actions button {
+    flex: 1; text-align: center; font-size: .88rem; font-weight: 700;
+    padding: 8px 0; border-radius: 9px; cursor: pointer; text-decoration: none;
+    border: 1.5px solid #e3e5ee; background: #fff; color: var(--ink);
+  }
+  .actions button.save { border-color: var(--brand); color: var(--brand); }
+  .actions button.save:hover { background: var(--brand-soft); }
+  .actions button.save.saved { background: var(--brand); color: #fff; }
+
+  .empty {
+    text-align: center; color: var(--muted); padding: 40px 20px;
+    background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+  }
+  .saved-list { display: flex; flex-direction: column; gap: 10px; }
+  .saved-item {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    background: var(--card); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 12px 16px; font-size: .95rem;
+  }
+  .saved-item .ctx { color: var(--muted); font-size: .82rem; }
+  .saved-item button { border: none; background: none; color: #c2410c; font-weight: 700; cursor: pointer; }
+
+  .mock-note {
+    max-width: 900px; margin: 26px auto 0; padding: 0 16px;
+    color: var(--muted); font-size: .82rem; text-align: center;
+  }
+  @media print {
+    header, form.search-card, .actions, .mock-note, #resultsSection { display: none !important; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>FunDay 🎉</h1>
+  <p>מתכננים יום כיף לצוות? הזינו פעילות, עיר, תקציב וגודל קבוצה — וקבלו הצעות מתאימות</p>
+</header>
+
+<main>
+  <form class="search-card card" id="searchForm">
+    <div>
+      <label for="category">סוג פעילות</label>
+      <select id="category">
+        <option value="">הכל</option>
+      </select>
+    </div>
+    <div>
+      <label for="city">עיר</label>
+      <select id="city">
+        <option value="">הכל</option>
+      </select>
+    </div>
+    <div>
+      <label for="budget">תקציב כולל (₪)</label>
+      <input type="number" id="budget" min="0" step="100" placeholder="לדוגמה: 5000">
+    </div>
+    <div>
+      <label for="group">גודל קבוצה</label>
+      <input type="number" id="group" min="1" step="1" placeholder="לדוגמה: 15">
+    </div>
+    <button class="primary" type="submit">חיפוש 🔍</button>
+  </form>
+
+  <div id="resultsSection">
+    <div class="section-title">
+      <h2>תוצאות</h2>
+      <span class="count" id="resultCount"></span>
+    </div>
+    <div class="results" id="results"></div>
+  </div>
+
+  <div id="savedSection" style="display:none">
+    <div class="section-title">
+      <h2>⭐ הימים שלי</h2>
+      <span class="count"><button style="border:none;background:none;color:var(--brand);font-weight:700;cursor:pointer" onclick="window.print()">🖨️ הדפסה / שיתוף</button></span>
+    </div>
+    <div class="saved-list" id="savedList"></div>
+  </div>
+</main>
+
+<p class="mock-note">🧪 עמוד הדגמה (mockup) — הנתונים לדוגמה בלבד; במוצר האמיתי הקטלוג נטען מקובץ נתונים מתוחזק</p>
+
+<script>
+const CATEGORY_NAMES = {
+  escape_room: "חדר בריחה",
+  workshop: "סדנה",
+  outdoor: "אקסטרים ושטח",
+  food: "אוכל וקולינריה",
+  bowling: "באולינג ומשחקים",
+  boat: "שייט",
+  karaoke: "קריוקי ומוזיקה",
+  tour: "סיור מודרך"
+};
+
+const ACTIVITIES = [
+  { id:"escape-tlv-01", name:"חדר בריחה — המוזיאון האבוד", category:"escape_room", city:"תל אביב", price_per_person:120, group_min:4, group_max:40, description:"חוויית חדר בריחה במספר חדרים במקביל, כולל טורניר בין צוותים.", link:"#" },
+  { id:"food-tlv-02", name:"סדנת שף — פסטה מהעולם", category:"food", city:"תל אביב", price_per_person:210, group_min:8, group_max:35, description:"סדנת בישול קבוצתית עם שף, כולל ארוחה מלאה ויין.", link:"#" },
+  { id:"boat-tlv-03", name:"שייט מפרשיות במרינה הרצליה", category:"boat", city:"הרצליה", price_per_person:180, group_min:10, group_max:60, description:"שייט של שעתיים עם מוזיקה וכיבוד, אפשרות לעצירת רחצה.", link:"#" },
+  { id:"outdoor-jlm-04", name:"סנפלינג בנחל פרת", category:"outdoor", city:"ירושלים", price_per_person:150, group_min:10, group_max:50, description:"יום שטח מודרך: סנפלינג, ניווט צוותי ופיקניק מאורגן.", link:"#" },
+  { id:"workshop-tlv-05", name:"סדנת גרפיטי בפלורנטין", category:"workshop", city:"תל אביב", price_per_person:95, group_min:8, group_max:30, description:"סיור אמנות רחוב וסדנת ריסוס שבסופה כל צוות יוצר קיר משלו.", link:"#" },
+  { id:"bowling-hfa-06", name:"באולינג + קארטינג בחיפה", category:"bowling", city:"חיפה", price_per_person:110, group_min:6, group_max:45, description:"ערב תחרותי: ליגת באולינג ומרוץ קארטינג, כולל פיצות.", link:"#" },
+  { id:"karaoke-tlv-07", name:"קריוקי פרטי בדיזנגוף", category:"karaoke", city:"תל אביב", price_per_person:85, group_min:5, group_max:25, description:"חדר קריוקי פרטי לשעתיים עם בר חטיפים ושתייה.", link:"#" },
+  { id:"tour-jlm-08", name:"סיור קולינרי בשוק מחנה יהודה", category:"tour", city:"ירושלים", price_per_person:130, group_min:8, group_max:35, description:"סיור טעימות מודרך בין דוכני השוק, כולל טעימות בכל תחנה.", link:"#" },
+  { id:"escape-hfa-09", name:"חדר בריחה — הצוללת", category:"escape_room", city:"חיפה", price_per_person:105, group_min:4, group_max:24, description:"חדר בריחה ימי בנמל חיפה, מתאים למספר צוותים במקביל.", link:"#" },
+  { id:"food-beer-10", name:"סדנת שוקולד בבאר שבע", category:"food", city:"באר שבע", price_per_person:90, group_min:6, group_max:40, description:"סדנת פרלינים מתוקה, כל משתתף יוצא עם מארז אישי.", link:"#" },
+  { id:"outdoor-eilat-11", name:"אבובים וספורט ימי באילת", category:"outdoor", city:"אילת", price_per_person:160, group_min:10, group_max:80, description:"יום חוף מאורגן: אבובים, בננה, וכסאות נוח — כולל צהריים.", link:"#" },
+  { id:"workshop-tlv-12", name:"סדנת קוקטיילים", category:"workshop", city:"תל אביב", price_per_person:140, group_min:8, group_max:28, description:"ברמן מלווה כל צוות בהכנת שלושה קוקטיילים — כולל תחרות.", link:"#" }
+];
+
+const fmt = n => "₪" + n.toLocaleString("he-IL");
+const $ = id => document.getElementById(id);
+
+/* populate dropdowns from data */
+[...new Set(ACTIVITIES.map(a => a.category))].forEach(c => {
+  $("category").insertAdjacentHTML("beforeend", `<option value="${c}">${CATEGORY_NAMES[c] || c}</option>`);
+});
+[...new Set(ACTIVITIES.map(a => a.city))].forEach(c => {
+  $("city").insertAdjacentHTML("beforeend", `<option value="${c}">${c}</option>`);
+});
+
+function getSaved() { try { return JSON.parse(localStorage.getItem("funday_saved") || "[]"); } catch { return []; } }
+function setSaved(v) { localStorage.setItem("funday_saved", JSON.stringify(v)); renderSaved(); }
+
+function search() {
+  const cat = $("category").value, city = $("city").value;
+  const budget = parseInt($("budget").value) || 0;
+  const group = parseInt($("group").value) || 0;
+
+  let list = ACTIVITIES.filter(a =>
+    (!cat || a.category === cat) &&
+    (!city || a.city === city) &&
+    (!group || (group >= a.group_min && group <= a.group_max))
+  ).map(a => {
+    const total = group ? a.price_per_person * group : null;
+    const over = (budget && total) ? Math.max(0, total - budget) : 0;
+    return { ...a, total, over, inBudget: !budget || !total || total <= budget };
+  });
+
+  list.sort((x, y) => (x.inBudget === y.inBudget) ? (x.total ?? x.price_per_person) - (y.total ?? y.price_per_person) : (x.inBudget ? -1 : 1));
+
+  const saved = new Set(getSaved().map(s => s.id));
+  $("resultCount").textContent = list.length ? `${list.length} פעילויות נמצאו` : "";
+  $("results").innerHTML = list.length ? list.map(a => `
+    <div class="card activity">
+      <div class="top">
+        <div>
+          <h3>${a.name}</h3>
+          <div class="city">📍 ${a.city}</div>
+        </div>
+        ${a.total !== null && budget ? (a.inBudget
+          ? `<span class="badge ok">✓ בתקציב</span>`
+          : `<span class="badge over">חורג ב־${fmt(a.over)}</span>`) : ""}
+      </div>
+      <div class="desc">${a.description}</div>
+      <div class="meta">
+        <span class="chip">${CATEGORY_NAMES[a.category] || a.category}</span>
+        <span class="chip">${fmt(a.price_per_person)} לאדם</span>
+        <span class="chip">${a.group_min}–${a.group_max} משתתפים</span>
+      </div>
+      ${a.total !== null ? `<div class="total">סה״כ לקבוצה: ${fmt(a.total)}</div>` : ""}
+      <div class="actions">
+        <button class="save ${saved.has(a.id) ? "saved" : ""}" data-id="${a.id}">${saved.has(a.id) ? "⭐ נשמר" : "⭐ שמירה"}</button>
+        <a href="${a.link}" target="_blank">🔗 לאתר הפעילות</a>
+      </div>
+    </div>`).join("")
+    : `<div class="empty" style="grid-column:1/-1">לא נמצאו פעילויות מתאימות 🙁<br>נסו להגדיל תקציב, לשנות עיר או לבחור ״הכל״</div>`;
+
+  document.querySelectorAll(".save").forEach(b => b.onclick = () => toggleSave(b.dataset.id));
+}
+
+function toggleSave(id) {
+  const a = ACTIVITIES.find(x => x.id === id);
+  let saved = getSaved();
+  if (saved.some(s => s.id === id)) saved = saved.filter(s => s.id !== id);
+  else saved.push({ id, name: a.name, city: a.city, group: $("group").value, budget: $("budget").value, price: a.price_per_person });
+  setSaved(saved);
+  search();
+}
+
+function renderSaved() {
+  const saved = getSaved();
+  $("savedSection").style.display = saved.length ? "" : "none";
+  $("savedList").innerHTML = saved.map(s => `
+    <div class="saved-item">
+      <div>
+        <strong>${s.name}</strong> — ${s.city}
+        <div class="ctx">${s.group ? `קבוצה של ${s.group} · ` : ""}${s.budget ? `תקציב ${fmt(+s.budget)} · ` : ""}${fmt(s.price)} לאדם</div>
+      </div>
+      <button onclick='removeSaved("${s.id}")'>הסרה ✕</button>
+    </div>`).join("");
+}
+function removeSaved(id) { setSaved(getSaved().filter(s => s.id !== id)); search(); }
+
+$("searchForm").onsubmit = e => { e.preventDefault(); search(); };
+renderSaved();
+search();
+</script>
+</body>
+</html>
