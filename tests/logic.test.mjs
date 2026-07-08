@@ -72,3 +72,37 @@ test("validateCatalog flags duplicate ids and collects entry errors", () => {
   assert.ok(errs.some(e => e.includes("duplicate id")));
   assert.ok(errs.some(e => e.includes("bad")));
 });
+
+import { suggestAlternatives } from "../js/logic.js";
+
+test("suggestAlternatives returns near-misses with reasons, excludes exact matches", () => {
+  const acts = [
+    A({ id: "exact" }),
+    A({ id: "other-city", city: "JLM" }),
+    A({ id: "other-cat", category: "food" }),
+    A({ id: "small-group", group_min: 10 })
+  ];
+  const s = suggestAlternatives(acts, { category: "escape_room", city: "TLV", group: 8 });
+  const ids = s.map(x => x.id);
+  assert.ok(!ids.includes("exact"));
+  assert.ok(ids.includes("other-city"));
+  assert.equal(s.find(x => x.id === "other-city").misses.length, 1);
+  assert.deepEqual(s.find(x => x.id === "other-city").misses, ["city"]);
+  assert.deepEqual(s.find(x => x.id === "small-group").misses, ["group"]);
+});
+
+test("suggestAlternatives drops candidates with too many misses and sorts by fewest", () => {
+  const acts = [
+    A({ id: "way-off", category: "food", city: "JLM", group_min: 20, price_per_person: 999 }),
+    A({ id: "close", city: "JLM" })
+  ];
+  const s = suggestAlternatives(acts, { category: "escape_room", city: "TLV", group: 8, budget: 500 });
+  assert.deepEqual(s.map(x => x.id), ["close"]);
+});
+
+test("suggestAlternatives flags over-budget as a miss", () => {
+  const acts = [A({ id: "pricey", price_per_person: 300 })];
+  const s = suggestAlternatives(acts, { category: "escape_room", city: "TLV", group: 10, budget: 1000 });
+  assert.deepEqual(s[0].misses, ["budget"]);
+  assert.equal(s[0].over, 2000);
+});

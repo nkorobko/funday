@@ -1,5 +1,5 @@
 // DOM wiring for index.html. All pure logic lives in logic.js; strings in i18n.js.
-import { annotateResults, buildBookingLinks, validateActivity } from "./logic.js";
+import { annotateResults, suggestAlternatives, buildBookingLinks, validateActivity } from "./logic.js";
 import { I18N, CATEGORY_NAMES, REGION_LANG } from "./i18n.js";
 
 let ACTIVITIES = [];
@@ -67,18 +67,12 @@ function setSaved(v) { localStorage.setItem("funday_saved_v2", JSON.stringify(v)
 
 function stars(r) { return r ? `<span class="stars">★ ${r.toFixed(1)}</span>` : ""; }
 
-function search() {
-  const budget = parseInt($("budget").value) || 0;
-  const group = parseInt($("group").value) || 0;
-  const list = annotateResults(regionData(), {
-    category: $("category").value,
-    city: $("city").value,
-    budget, group
-  });
-
-  const saved = new Set(getSaved().map(s => s.id));
-  $("resultCount").textContent = list.length ? T.found(list.length) : "";
-  $("results").innerHTML = list.length ? list.map(a => `
+function activityCard(a, budget, saved) {
+  const missChips = (a.misses || []).map(m =>
+    m === "city" ? `<span class="chip miss">${T.missCity(a.city)}</span>` :
+    m === "category" ? `<span class="chip miss">${T.missCategory(catName(a.category))}</span>` :
+    m === "group" ? `<span class="chip miss">${T.missGroup(a.group_min, a.group_max)}</span>` : "").join("");
+  return `
     <div class="card activity">
       <div class="top">
         <div>
@@ -94,14 +88,38 @@ function search() {
         <span class="chip">${catName(a.category)}</span>
         <span class="chip">${fmt(a.price_per_person)} ${T.perPerson}</span>
         <span class="chip">${a.group_min}–${a.group_max} ${T.participants}</span>
+        ${missChips}
       </div>
       ${a.total !== null ? `<div class="total">${T.groupTotal}: ${fmt(a.total)}</div>` : ""}
       <div class="actions">
         <button class="details" data-id="${a.id}">${T.details}</button>
         <button class="save ${saved.has(a.id) ? "saved" : ""}" data-id="${a.id}">${saved.has(a.id) ? T.saved : T.save}</button>
       </div>
-    </div>`).join("")
-    : `<div class="empty" style="grid-column:1/-1">${T.noResults}</div>`;
+    </div>`;
+}
+
+function search() {
+  const budget = parseInt($("budget").value) || 0;
+  const group = parseInt($("group").value) || 0;
+  const criteria = { category: $("category").value, city: $("city").value, budget, group };
+  const list = annotateResults(regionData(), criteria);
+  // Sparse-catalog UX: when exact results are thin, offer close matches with reasons.
+  const suggestions = list.length < 3 ? suggestAlternatives(regionData(), criteria) : [];
+
+  const saved = new Set(getSaved().map(s => s.id));
+  $("resultCount").textContent = list.length ? T.found(list.length) : "";
+
+  let html = list.map(a => activityCard(a, budget, saved)).join("");
+  if (!list.length && !suggestions.length) {
+    html = `<div class="empty" style="grid-column:1/-1">${T.noResults}</div>`;
+  } else if (!list.length) {
+    html = `<div class="empty soft" style="grid-column:1/-1">${T.noExact}</div>`;
+  }
+  if (suggestions.length) {
+    html += `<div class="suggest-title" style="grid-column:1/-1"><h2>${T.closeTitle}</h2></div>`;
+    html += suggestions.map(a => activityCard(a, budget, saved)).join("");
+  }
+  $("results").innerHTML = html;
 
   document.querySelectorAll(".save").forEach(b => b.onclick = () => toggleSave(b.dataset.id));
   document.querySelectorAll(".details").forEach(b => b.onclick = () => openModal(b.dataset.id));

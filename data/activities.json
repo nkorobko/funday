@@ -13,7 +13,11 @@
     "description": "חוויית חדר בריחה במספר חדרים במקביל, כולל טורניר בין צוותים ומנחה צמוד לכל קבוצה.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "EscapeCity TLV", "phone": "972501234501", "email": "book@escapecity.example" }
+    "provider": {
+      "name": "EscapeCity TLV",
+      "phone": "972501234501",
+      "email": "book@escapecity.example"
+    }
   },
   {
     "id": "food-tlv-02",
@@ -29,7 +33,11 @@
     "description": "סדנת בישול קבוצתית עם שף, כולל ארוחה מלאה ויין. מטבח מאובזר וצוות מלווה.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "השף הלבן", "phone": "972501234502", "email": "events@chef.example" }
+    "provider": {
+      "name": "השף הלבן",
+      "phone": "972501234502",
+      "email": "events@chef.example"
+    }
   },
   {
     "id": "boat-hrz-03",
@@ -45,7 +53,11 @@
     "description": "שייט של שעתיים עם מוזיקה וכיבוד, אפשרות לעצירת רחצה בים הפתוח.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Sail4U", "phone": "972501234503", "email": "sail@sail4u.example" }
+    "provider": {
+      "name": "Sail4U",
+      "phone": "972501234503",
+      "email": "sail@sail4u.example"
+    }
   },
   {
     "id": "outdoor-jlm-04",
@@ -61,7 +73,11 @@
     "description": "יום שטח מודרך: סנפלינג, ניווט צוותי ופיקניק מאורגן עם צוות מדריכים מוסמך.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "דרך השטח", "phone": "972501234504", "email": "info@field.example" }
+    "provider": {
+      "name": "דרך השטח",
+      "phone": "972501234504",
+      "email": "info@field.example"
+    }
   },
   {
     "id": "workshop-tlv-05",
@@ -77,7 +93,11 @@
     "description": "סיור אמנות רחוב וסדנת ריסוס שבסופה כל צוות יוצר קיר משלו.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "גרפיטיולוגיה", "phone": "972501234505", "email": "hi@graffiti.example" }
+    "provider": {
+      "name": "גרפיטיולוגיה",
+      "phone": "972501234505",
+      "email": "hi@graffiti.example"
+    }
   },
   {
     "id": "games-hfa-06",
@@ -93,7 +113,11 @@
     "description": "ערב תחרותי: ליגת באולינג ומרוץ קארטינג, כולל פיצות ושתייה.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "SpeedZone חיפה", "phone": "972501234506", "email": "fun@speedzone.example" }
+    "provider": {
+      "name": "SpeedZone חיפה",
+      "phone": "972501234506",
+      "email": "fun@speedzone.example"
+    }
   },
   {
     "id": "karaoke-tlv-07",
@@ -109,7 +133,11 @@
     "description": "חדר קריוקי פרטי לשעתיים עם בר חטיפים ושתייה.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "SingIt", "phone": "972501234507", "email": "party@singit.example" }
+    "provider": {
+      "name": "SingIt",
+      "phone": "972501234507",
+      "email": "party@singit.example"
+    }
   },
   {
     "id": "tour-jlm-08",
@@ -125,7 +153,11 @@
     "description": "סיור טעימות מודרך בין דוכני השוק, כולל טעימות בכל תחנה.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "טעמי השוק", "phone": "972501234508", "email": "tours@shuk.example" }
+    "provider": {
+      "name": "טעמי השוק",
+      "phone": "972501234508",
+      "email": "tours@shuk.example"
+    }
   },
   {
     "id": "food-bsv-10",
@@ -141,7 +173,11 @@
     "description": "סדנת פרלינים מתוקה, כל משתתף יוצא עם מארז אישי.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "קקאו", "phone": "972501234510", "email": "sweet@cacao.example" }
+    "provider": {
+      "name": "קקאו",
+      "phone": "972501234510",
+      "email": "sweet@cacao.example"
+    }
   },
   {
     "id": "workshop-tlv-12",
@@ -157,7 +193,11 @@
     "description": "ברמן מלווה כל צוות בהכנת שלושה קוקטיילים — כולל תחרות.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Shaken", "phone": "972501234512", "email": "bar@shaken.example" }
+    "provider": {
+      "name": "Shaken",
+      "phone": "972501234512",
+      "email": "bar@shaken.example"
+    }
   },
   {
     "id": "escape-dal-01",
@@ -173,7 +213,11 @@
     "description": "Multi-room escape experience with parallel rooms for team tournaments, host included.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Dallas Escapes", "phone": "12145550101", "email": "book@dallasescapes.example" }
+    "provider": {
+      "name": "Dallas Escapes",
+      "phone": "12145550101",
+      "email": "book@dallasescapes.example"
+    }
   },
   {
     "id": "games-dal-02",
@@ -189,7 +233,11 @@
     "description": "Private lanes, arcade card per player, pizza and soft drinks included.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "StrikeHouse", "phone": "12145550102", "email": "events@strikehouse.example" }
+    "provider": {
+      "name": "StrikeHouse",
+      "phone": "12145550102",
+      "email": "events@strikehouse.example"
+    }
   },
   {
     "id": "food-dal-03",
@@ -205,7 +253,11 @@
     "description": "Hands-on Texas BBQ masterclass with a pitmaster, full lunch included.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Smoke & Oak", "phone": "12145550103", "email": "bbq@smokeoak.example" }
+    "provider": {
+      "name": "Smoke & Oak",
+      "phone": "12145550103",
+      "email": "bbq@smokeoak.example"
+    }
   },
   {
     "id": "outdoor-dal-04",
@@ -221,7 +273,11 @@
     "description": "Guided group paddle with all gear, safety briefing, and riverside picnic.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Trinity Paddle Co.", "phone": "12145550104", "email": "go@trinitypaddle.example" }
+    "provider": {
+      "name": "Trinity Paddle Co.",
+      "phone": "12145550104",
+      "email": "go@trinitypaddle.example"
+    }
   },
   {
     "id": "sports-dal-05",
@@ -237,7 +293,11 @@
     "description": "Private hitting bays, team leaderboard game, appetizers and drinks package.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Topgolf Events", "phone": "12145550105", "email": "groups@topgolf.example" }
+    "provider": {
+      "name": "Topgolf Events",
+      "phone": "12145550105",
+      "email": "groups@topgolf.example"
+    }
   },
   {
     "id": "workshop-dal-06",
@@ -253,7 +313,11 @@
     "description": "Guided painting session with an artist, drinks included, everyone leaves with a canvas.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "ArtBar Dallas", "phone": "12145550106", "email": "hello@artbar.example" }
+    "provider": {
+      "name": "ArtBar Dallas",
+      "phone": "12145550106",
+      "email": "hello@artbar.example"
+    }
   },
   {
     "id": "tour-dal-07",
@@ -269,6 +333,670 @@
     "description": "Guided tasting walk through downtown eateries — 6 stops, all tastings included.",
     "link": "#",
     "reviews_link": "#",
-    "provider": { "name": "Taste DFW", "phone": "12145550107", "email": "tours@tastedfw.example" }
+    "provider": {
+      "name": "Taste DFW",
+      "phone": "12145550107",
+      "email": "tours@tastedfw.example"
+    }
+  },
+  {
+    "id": "escape-tlv-13",
+    "region": "il",
+    "name": "חדר בריחה — הכספת של דיזנגוף",
+    "category": "escape_room",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 110,
+    "group_min": 4,
+    "group_max": 24,
+    "rating": 4.6,
+    "description": "שוד הכספת הגדול: חדר בריחה מהיר וטכנולוגי בלב תל אביב, אפשרות לכמה חדרים במקביל.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "EscapeBox TLV",
+      "phone": "972501234513",
+      "email": "play@escapebox.example"
+    }
+  },
+  {
+    "id": "escape-jlm-14",
+    "region": "il",
+    "name": "חדר בריחה — מנהרות הכותל",
+    "category": "escape_room",
+    "city": "ירושלים",
+    "currency": "ILS",
+    "price_per_person": 115,
+    "group_min": 4,
+    "group_max": 28,
+    "rating": 4.7,
+    "description": "הרפתקת בריחה היסטורית בעיר העתיקה, כולל חידות בשטח פתוח בין תחנות.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "JeruEscape",
+      "phone": "972501234514",
+      "email": "book@jeruescape.example"
+    }
+  },
+  {
+    "id": "escape-hfa-15",
+    "region": "il",
+    "name": "חדר בריחה — הנמל האבוד",
+    "category": "escape_room",
+    "city": "חיפה",
+    "currency": "ILS",
+    "price_per_person": 105,
+    "group_min": 4,
+    "group_max": 24,
+    "rating": 4.5,
+    "description": "חדר בריחה ימי ליד הנמל, שני חדרים מקבילים לתחרות בין צוותים.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "PortEscape חיפה",
+      "phone": "972501234515",
+      "email": "hi@portescape.example"
+    }
+  },
+  {
+    "id": "escape-bsv-16",
+    "region": "il",
+    "name": "חדר בריחה — המעבדה",
+    "category": "escape_room",
+    "city": "באר שבע",
+    "currency": "ILS",
+    "price_per_person": 95,
+    "group_min": 4,
+    "group_max": 20,
+    "rating": 4.4,
+    "description": "מעבדה סודית בקמפוס: חדר בריחה מדעי עם אפקטים מיוחדים.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "LabEscape",
+      "phone": "972501234516",
+      "email": "go@labescape.example"
+    }
+  },
+  {
+    "id": "tour-tlv-17",
+    "region": "il",
+    "name": "סיור גרפיטי ואמנות רחוב בפלורנטין",
+    "category": "tour",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 90,
+    "group_min": 5,
+    "group_max": 40,
+    "rating": 4.7,
+    "description": "סיור מודרך בין קירות הגרפיטי של פלורנטין עם סיפורי האמנים והשכונה.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "סיורי העיר",
+      "phone": "972501234517",
+      "email": "tours@citywalks.example"
+    }
+  },
+  {
+    "id": "tour-tlv-18",
+    "region": "il",
+    "name": "סיור קולינרי בשוק הכרמל",
+    "category": "tour",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 125,
+    "group_min": 6,
+    "group_max": 30,
+    "rating": 4.8,
+    "description": "טעימות בדוכנים נבחרים בשוק הכרמל: מחומוס ועד קנאפה, כולל סיפורי השוק.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "טעמי תל אביב",
+      "phone": "972501234518",
+      "email": "food@tlvtaste.example"
+    }
+  },
+  {
+    "id": "tour-hfa-19",
+    "region": "il",
+    "name": "סיור במושבה הגרמנית ובגנים הבהאיים",
+    "category": "tour",
+    "city": "חיפה",
+    "currency": "ILS",
+    "price_per_person": 85,
+    "group_min": 6,
+    "group_max": 45,
+    "rating": 4.5,
+    "description": "סיור נוף והיסטוריה: מהמושבה הגרמנית אל מרפסת הגנים הבהאיים.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "חיפה בגובה העיניים",
+      "phone": "972501234519",
+      "email": "tour@haifaview.example"
+    }
+  },
+  {
+    "id": "games-tlv-20",
+    "region": "il",
+    "name": "לייזר טאג + באולינג",
+    "category": "games",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 100,
+    "group_min": 4,
+    "group_max": 50,
+    "rating": 4.4,
+    "description": "ערב משחקים כפול: מגרש לייזר טאג פרטי ומסלולי באולינג שמורים לקבוצה.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "GameZone TLV",
+      "phone": "972501234520",
+      "email": "fun@gamezone.example"
+    }
+  },
+  {
+    "id": "games-jlm-21",
+    "region": "il",
+    "name": "זירת VR — מציאות מדומה",
+    "category": "games",
+    "city": "ירושלים",
+    "currency": "ILS",
+    "price_per_person": 120,
+    "group_min": 4,
+    "group_max": 30,
+    "rating": 4.6,
+    "description": "משחקי מציאות מדומה קבוצתיים: חדרי בריחה וירטואליים ומשחקי ספורט.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "VR Arena",
+      "phone": "972501234521",
+      "email": "play@vrarena.example"
+    }
+  },
+  {
+    "id": "games-bsv-22",
+    "region": "il",
+    "name": "באולינג ומשחקי ארקייד",
+    "category": "games",
+    "city": "באר שבע",
+    "currency": "ILS",
+    "price_per_person": 85,
+    "group_min": 4,
+    "group_max": 40,
+    "rating": 4.2,
+    "description": "מתחם באולינג עם עמדות ארקייד, כולל כרטיסי משחק לכל משתתף.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "BowlNegev",
+      "phone": "972501234522",
+      "email": "strike@bowlnegev.example"
+    }
+  },
+  {
+    "id": "karaoke-hfa-23",
+    "region": "il",
+    "name": "קריוקי פרטי במושבה",
+    "category": "karaoke",
+    "city": "חיפה",
+    "currency": "ILS",
+    "price_per_person": 80,
+    "group_min": 5,
+    "group_max": 25,
+    "rating": 4.3,
+    "description": "חדר קריוקי פרטי עם מסכים כפולים, בר חטיפים ושתייה קלה.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "SingHaifa",
+      "phone": "972501234523",
+      "email": "mic@singhaifa.example"
+    }
+  },
+  {
+    "id": "food-jlm-24",
+    "region": "il",
+    "name": "סדנת שוקולד בירושלים",
+    "category": "food",
+    "city": "ירושלים",
+    "currency": "ILS",
+    "price_per_person": 95,
+    "group_min": 6,
+    "group_max": 35,
+    "rating": 4.6,
+    "description": "סדנת פרלינים ופסי שוקולד, כל משתתף אורז מארז לקחת הביתה.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "שוקו ירושלים",
+      "phone": "972501234524",
+      "email": "sweet@chocojlm.example"
+    }
+  },
+  {
+    "id": "food-hfa-25",
+    "region": "il",
+    "name": "סדנת סושי קבוצתית",
+    "category": "food",
+    "city": "חיפה",
+    "currency": "ILS",
+    "price_per_person": 130,
+    "group_min": 8,
+    "group_max": 30,
+    "rating": 4.7,
+    "description": "שף סושי מלווה כל צוות בגלגול מגשי סושי — כולל ארוחה ותחרות הגשה.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "SushiLab",
+      "phone": "972501234525",
+      "email": "roll@sushilab.example"
+    }
+  },
+  {
+    "id": "workshop-jlm-26",
+    "region": "il",
+    "name": "סדנת קרמיקה — אובניים",
+    "category": "workshop",
+    "city": "ירושלים",
+    "currency": "ILS",
+    "price_per_person": 110,
+    "group_min": 6,
+    "group_max": 25,
+    "rating": 4.5,
+    "description": "סדנת קדרות על אובניים בסטודיו ירושלמי, הכלים נשרפים ונשלחים אליכם.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "חומר ביד",
+      "phone": "972501234526",
+      "email": "clay@homer.example"
+    }
+  },
+  {
+    "id": "workshop-bsv-27",
+    "region": "il",
+    "name": "סדנת יצירה בנגב",
+    "category": "workshop",
+    "city": "באר שבע",
+    "currency": "ILS",
+    "price_per_person": 100,
+    "group_min": 6,
+    "group_max": 22,
+    "rating": 4.4,
+    "description": "סדנת אמנות מדברית: יצירה בחול צבעוני וחומרים מקומיים.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "נגב יוצר",
+      "phone": "972501234527",
+      "email": "art@negev.example"
+    }
+  },
+  {
+    "id": "outdoor-tbr-28",
+    "region": "il",
+    "name": "ראפטינג בירדן ההררי",
+    "category": "outdoor",
+    "city": "טבריה",
+    "currency": "ILS",
+    "price_per_person": 140,
+    "group_min": 8,
+    "group_max": 60,
+    "rating": 4.8,
+    "description": "שייט אבובים וראפטינג בירדן, כולל הדרכה, ציוד וארוחת צהריים על המים.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "ראפטינג צפון",
+      "phone": "972501234528",
+      "email": "raft@north.example"
+    }
+  },
+  {
+    "id": "outdoor-tlv-29",
+    "region": "il",
+    "name": "סאפ וקיאקים בחוף הצוק",
+    "category": "outdoor",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 120,
+    "group_min": 6,
+    "group_max": 40,
+    "rating": 4.5,
+    "description": "בוקר ימי: סאפים, קיאקים ומשחקי חוף עם מדריכים, כולל ציוד מלא.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "SeaTLV",
+      "phone": "972501234529",
+      "email": "sea@seatlv.example"
+    }
+  },
+  {
+    "id": "sports-tlv-30",
+    "region": "il",
+    "name": "טורניר כדורגל בועות",
+    "category": "sports",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 95,
+    "group_min": 8,
+    "group_max": 30,
+    "rating": 4.6,
+    "description": "משחק כדורגל בתוך בועות ענק — טורניר קבוצתי מצחיק במיוחד.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "BubbleBall IL",
+      "phone": "972501234530",
+      "email": "bounce@bubble.example"
+    }
+  },
+  {
+    "id": "sports-hfa-31",
+    "region": "il",
+    "name": "קארטינג תחרותי",
+    "category": "sports",
+    "city": "חיפה",
+    "currency": "ILS",
+    "price_per_person": 115,
+    "group_min": 6,
+    "group_max": 40,
+    "rating": 4.5,
+    "description": "מרוץ קארטינג במסלול מקורה: מקצי דירוג, חצי גמר וגמר עם פודיום.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "SpeedKart",
+      "phone": "972501234531",
+      "email": "race@speedkart.example"
+    }
+  },
+  {
+    "id": "boat-tlv-32",
+    "region": "il",
+    "name": "שייט יאכטה מנמל תל אביב",
+    "category": "boat",
+    "city": "תל אביב",
+    "currency": "ILS",
+    "price_per_person": 170,
+    "group_min": 8,
+    "group_max": 45,
+    "rating": 4.7,
+    "description": "שייט שקיעה ביאכטה פרטית עם מוזיקה, כיבוד ועצירת רחצה.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "YachtClub TLV",
+      "phone": "972501234532",
+      "email": "sail@yachttlv.example"
+    }
+  },
+  {
+    "id": "games-fw-08",
+    "region": "dallas",
+    "name": "Fort Worth Bowling & Billiards",
+    "category": "games",
+    "city": "Fort Worth",
+    "currency": "USD",
+    "price_per_person": 28,
+    "group_min": 4,
+    "group_max": 45,
+    "rating": 4.3,
+    "description": "Private lanes and billiard tables with a group snack package.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Cowtown Lanes",
+      "phone": "12145550108",
+      "email": "play@cowtownlanes.example"
+    }
+  },
+  {
+    "id": "games-de-09",
+    "region": "dallas",
+    "name": "Pinball & Beer Hall",
+    "category": "games",
+    "city": "Deep Ellum",
+    "currency": "USD",
+    "price_per_person": 25,
+    "group_min": 4,
+    "group_max": 40,
+    "rating": 4.5,
+    "description": "Retro pinball hall takeover with tournament brackets and pizza.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Flip House",
+      "phone": "12145550109",
+      "email": "games@fliphouse.example"
+    }
+  },
+  {
+    "id": "escape-pln-10",
+    "region": "dallas",
+    "name": "Escape Room — Area 51",
+    "category": "escape_room",
+    "city": "Plano",
+    "currency": "USD",
+    "price_per_person": 32,
+    "group_min": 4,
+    "group_max": 30,
+    "rating": 4.5,
+    "description": "Sci-fi escape rooms with parallel missions for team competition.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Plano Escapes",
+      "phone": "12145550110",
+      "email": "book@planoescapes.example"
+    }
+  },
+  {
+    "id": "escape-fw-11",
+    "region": "dallas",
+    "name": "Escape the Saloon",
+    "category": "escape_room",
+    "city": "Fort Worth",
+    "currency": "USD",
+    "price_per_person": 33,
+    "group_min": 4,
+    "group_max": 28,
+    "rating": 4.6,
+    "description": "Wild-west themed escape experience in the historic Stockyards.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Stockyards Escape",
+      "phone": "12145550111",
+      "email": "howdy@saloonescape.example"
+    }
+  },
+  {
+    "id": "karaoke-de-12",
+    "region": "dallas",
+    "name": "Private Karaoke Suites",
+    "category": "karaoke",
+    "city": "Deep Ellum",
+    "currency": "USD",
+    "price_per_person": 25,
+    "group_min": 4,
+    "group_max": 25,
+    "rating": 4.4,
+    "description": "Private karaoke rooms with song libraries in English and Spanish.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "SingCity Dallas",
+      "phone": "12145550112",
+      "email": "mic@singcity.example"
+    }
+  },
+  {
+    "id": "food-ba-13",
+    "region": "dallas",
+    "name": "Taco & Margarita Masterclass",
+    "category": "food",
+    "city": "Bishop Arts",
+    "currency": "USD",
+    "price_per_person": 55,
+    "group_min": 6,
+    "group_max": 30,
+    "rating": 4.7,
+    "description": "Hands-on taco cooking with a margarita mixology session.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Casa Sabor",
+      "phone": "12145550113",
+      "email": "hola@casasabor.example"
+    }
+  },
+  {
+    "id": "tour-fw-14",
+    "region": "dallas",
+    "name": "Fort Worth Stockyards Tour",
+    "category": "tour",
+    "city": "Fort Worth",
+    "currency": "USD",
+    "price_per_person": 40,
+    "group_min": 6,
+    "group_max": 40,
+    "rating": 4.6,
+    "description": "Guided walk through the Stockyards with the twice-daily cattle drive.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Cowtown Tours",
+      "phone": "12145550114",
+      "email": "tours@cowtown.example"
+    }
+  },
+  {
+    "id": "outdoor-gv-15",
+    "region": "dallas",
+    "name": "Zipline & Ropes Course",
+    "category": "outdoor",
+    "city": "Grapevine",
+    "currency": "USD",
+    "price_per_person": 50,
+    "group_min": 8,
+    "group_max": 50,
+    "rating": 4.5,
+    "description": "Treetop ropes course and zipline circuit with certified guides.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Canopy DFW",
+      "phone": "12145550115",
+      "email": "fly@canopydfw.example"
+    }
+  },
+  {
+    "id": "sports-de-16",
+    "region": "dallas",
+    "name": "Axe Throwing League Night",
+    "category": "sports",
+    "city": "Deep Ellum",
+    "currency": "USD",
+    "price_per_person": 35,
+    "group_min": 4,
+    "group_max": 36,
+    "rating": 4.6,
+    "description": "Coached axe-throwing lanes with a team tournament format.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Bury the Hatchet",
+      "phone": "12145550116",
+      "email": "throw@hatchet.example"
+    }
+  },
+  {
+    "id": "sports-arl-17",
+    "region": "dallas",
+    "name": "Ballpark Group Experience",
+    "category": "sports",
+    "city": "Arlington",
+    "currency": "USD",
+    "price_per_person": 65,
+    "group_min": 10,
+    "group_max": 100,
+    "rating": 4.7,
+    "description": "Group suite at the ballpark with food package and a stadium tour.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Arlington Events",
+      "phone": "12145550117",
+      "email": "groups@ballpark.example"
+    }
+  },
+  {
+    "id": "boat-lew-18",
+    "region": "dallas",
+    "name": "Party Pontoon on the Lake",
+    "category": "boat",
+    "city": "Lewisville",
+    "currency": "USD",
+    "price_per_person": 60,
+    "group_min": 8,
+    "group_max": 40,
+    "rating": 4.5,
+    "description": "Private pontoon cruise with water toys, music and BBQ on board.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Lake Days",
+      "phone": "12145550118",
+      "email": "captain@lakedays.example"
+    }
+  },
+  {
+    "id": "workshop-pln-19",
+    "region": "dallas",
+    "name": "Pottery & Wine Workshop",
+    "category": "workshop",
+    "city": "Plano",
+    "currency": "USD",
+    "price_per_person": 45,
+    "group_min": 6,
+    "group_max": 24,
+    "rating": 4.4,
+    "description": "Guided wheel-throwing session with a wine tasting on the side.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Mud & Merlot",
+      "phone": "12145550119",
+      "email": "spin@mudmerlot.example"
+    }
+  },
+  {
+    "id": "games-dt-20",
+    "region": "dallas",
+    "name": "Retro Arcade Takeover",
+    "category": "games",
+    "city": "Downtown Dallas",
+    "currency": "USD",
+    "price_per_person": 30,
+    "group_min": 4,
+    "group_max": 60,
+    "rating": 4.5,
+    "description": "Free-play retro arcade with team high-score challenges.",
+    "link": "#",
+    "reviews_link": "#",
+    "provider": {
+      "name": "Barcadia",
+      "phone": "12145550120",
+      "email": "insert@barcadia.example"
+    }
   }
 ]

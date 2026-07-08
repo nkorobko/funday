@@ -81,6 +81,9 @@ button.primary:hover { filter: brightness(1.06); }
 .activity .desc { color: #4a4f44; font-size: .93rem; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
 .chip { background: var(--brand-soft); color: var(--brand); font-size: .8rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+.chip.miss { background: var(--accent-soft); color: #8a4a10; }
+.suggest-title h2 { font-size: 1.1rem; font-weight: 600; margin: 14px 4px 0; }
+.empty.soft { padding: 22px 20px; }
 .total { font-weight: 800; font-size: 1.02rem; margin-top: 2px; }
 .actions { display: flex; gap: 10px; margin-top: 8px; }
 .actions button {

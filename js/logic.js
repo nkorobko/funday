@@ -17,6 +17,28 @@ export function annotateResults(activities, { category = "", city = "", budget =
       : (x.inBudget ? -1 : 1));
 }
 
+// Near-miss suggestions for sparse catalogs: candidates that violate at most
+// two of the set criteria, each annotated with which criteria they miss
+// ("category" | "city" | "group" | "budget"). Exact matches (zero misses)
+// are excluded — they belong in the main results.
+export function suggestAlternatives(activities, { category = "", city = "", budget = 0, group = 0 } = {}, limit = 6) {
+  return activities
+    .map(a => {
+      const misses = [];
+      if (category && a.category !== category) misses.push("category");
+      if (city && a.city !== city) misses.push("city");
+      if (group && (group < a.group_min || group > a.group_max)) misses.push("group");
+      const total = group ? a.price_per_person * group : null;
+      const over = (budget && total) ? Math.max(0, total - budget) : 0;
+      if (over > 0) misses.push("budget");
+      return { ...a, total, over, inBudget: over === 0, misses };
+    })
+    .filter(a => a.misses.length >= 1 && a.misses.length <= 2)
+    .sort((x, y) => (x.misses.length - y.misses.length)
+      || (x.total ?? x.price_per_person) - (y.total ?? y.price_per_person))
+    .slice(0, limit);
+}
+
 export function buildBookingLinks(activity, { group = 0, budget = 0 } = {}, t) {
   const msg = encodeURIComponent(t.waMsg(activity, group, budget));
   const phone = activity.provider?.phone;
