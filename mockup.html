@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FunDay 🎉</title>
+<title>FunDay 🎉 · Conifers</title>
+<link rel="icon" type="image/png" href="assets/conifers-fav32.png">
 <style>
   :root {
     --bg: #f6f7fb;
     --card: #ffffff;
     --ink: #1f2437;
     --muted: #6b7280;
-    --brand: #5b5bd6;
-    --brand-soft: #eef0ff;
+    --brand: #1f8a5a;
+    --brand-soft: #e7f7ee;
     --ok: #16a34a;
     --ok-soft: #eafcf1;
     --warn: #d97706;
@@ -29,13 +30,14 @@
     padding-bottom: 60px;
   }
   header {
-    background: linear-gradient(135deg, #5b5bd6 0%, #8b5bd6 60%, #d65bb8 100%);
+    background: linear-gradient(135deg, #08130c 0%, #103822 60%, #175035 100%);
     color: #fff;
     padding: 26px 20px 30px;
     text-align: center;
     position: relative;
   }
   header h1 { font-size: 2.1rem; letter-spacing: .5px; }
+  header .company-logo { height: 26px; display: block; margin: 0 auto 14px; opacity: .95; }
   header p { opacity: .92; margin-top: 6px; font-size: 1.02rem; }
   .region-switch {
     display: inline-flex; margin-bottom: 14px;
@@ -138,6 +140,7 @@
 <body>
 
 <header>
+  <img class="company-logo" src="assets/conifers-logo.png" alt="Conifers">
   <div class="region-switch" id="regionSwitch">
     <button data-region="il">🇮🇱 ישראל</button>
     <button data-region="dallas">🇺🇸 Dallas</button>
