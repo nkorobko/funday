@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FunDay activities catalog",
+  "description": "Documentation of record for data/activities.json. Enforcement happens in js/logic.js validateCatalog (run via npm run validate).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "region", "name", "category", "city", "currency", "price_per_person", "group_min", "group_max", "description", "provider"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1 },
+      "region": { "enum": ["il", "dallas"] },
+      "name": { "type": "string", "minLength": 1 },
+      "category": { "type": "string", "minLength": 1 },
+      "city": { "type": "string", "minLength": 1 },
+      "currency": { "enum": ["ILS", "USD"] },
+      "price_per_person": { "type": "integer", "minimum": 1 },
+      "group_min": { "type": "integer", "minimum": 1 },
+      "group_max": { "type": "integer", "minimum": 1 },
+      "description": { "type": "string", "minLength": 1 },
+      "rating": { "type": "number", "minimum": 1, "maximum": 5 },
+      "reviews_link": { "type": "string" },
+      "link": { "type": "string" },
+      "provider": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "phone": { "type": "string", "pattern": "^\\d{8,15}$" },
+          "email": { "type": "string", "format": "email" }
+        }
+      },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    }
+  }
+}
